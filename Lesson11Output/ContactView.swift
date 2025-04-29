@@ -9,7 +9,29 @@ import SwiftUI
 
 struct ContactView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                NavigationLink(destination: HelpView()) {
+                    Image(systemName: "phone.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.green)
+                }
+                Text("Contact Page")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 50)
+                NavigationLink(destination: HelpView()) {
+                    Text("Go to Help Page")
+                }
+                .navigationTitle("Contact")
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+                .cornerRadius(10)
+            }
+        }
     }
 }
 
