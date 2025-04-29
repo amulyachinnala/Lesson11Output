@@ -9,7 +9,29 @@ import SwiftUI
 
 struct HelpView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                NavigationLink(destination: ContentView()) {
+                    Image(systemName: "questionmark.circle.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.blue)
+                }
+                Text("Help Page")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 50)
+                NavigationLink(destination: ContentView()) {
+                    Text("Go to Home Page")
+                }
+                .navigationTitle("Help")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+                .cornerRadius(10)
+            }
+        }
     }
 }
 
